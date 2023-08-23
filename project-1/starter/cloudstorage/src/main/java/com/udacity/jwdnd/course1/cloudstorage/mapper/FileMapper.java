@@ -26,6 +26,6 @@ public interface FileMapper {
 	@Select("SELECT * FROM FILES WHERE fileId = #{fileId}")
 	File getFile(int fileId);
 
-    @Select("SELECT 1 FROM FILES WHERE fileName = #{fileName} AND userId = #{userId}")
+    @Select("SELECT COUNT(*) FROM FILES WHERE fileName = #{fileName} AND userId = #{userId}")
     int checkExistFileName(String fileName, int userId);
 }

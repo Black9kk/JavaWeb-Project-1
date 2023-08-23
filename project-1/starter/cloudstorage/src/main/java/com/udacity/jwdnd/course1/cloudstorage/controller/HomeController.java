@@ -39,11 +39,7 @@ public class HomeController {
 		List<Note> noteList = noteService.getNoteList(userId);
 		List<File> fileList = fileService.getFileList(userId);
 		List<Credential> credentialList = credentialService.getCredentialList(userId);
-		Note note = new Note(); File file = new File(); Credential credential = new Credential();
-		model.addAttribute("note", note);
-		model.addAttribute("file", file);
 		model.addAttribute("noteList", noteList);
-		model.addAttribute("credential", credential);
 		model.addAttribute("fileList", fileList);
 		model.addAttribute("credentialList", credentialList);
 		return "home";

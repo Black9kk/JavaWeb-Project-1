@@ -41,7 +41,7 @@ public class CredentialService {
 		String encryptPassword = encryptionService.encryptValue(credential.getPassword(), encodeKey);
 		credential.setKey(encodeKey);
 		credential.setPassword(encryptPassword);
-		if(isExistCredential(credential.getUsername(), credential.getUserId())) {
+		if(isExistCredential(credential.getUsername(), credential.getUserId()) && credential.getCredentialId() == 0) {
 			return result;
 		}
 		try {
