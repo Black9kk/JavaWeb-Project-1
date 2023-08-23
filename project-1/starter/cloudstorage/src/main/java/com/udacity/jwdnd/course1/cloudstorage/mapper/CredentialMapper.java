@@ -29,4 +29,7 @@ public interface CredentialMapper {
 
 	@Select("SELECT * FROM CREDENTIALS WHERE credentialid = #{credentialId}")
 	Credential getCredential(int credentialId);
+
+	@Select("SELECT 1 FROM CREDENTIALS WHERE userid = #{userId} and username = #{username}")
+	Integer isExistCredential(String username, Integer userId);
 }

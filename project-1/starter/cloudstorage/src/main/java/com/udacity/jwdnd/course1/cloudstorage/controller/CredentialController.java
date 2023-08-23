@@ -37,6 +37,7 @@ public class CredentialController {
 		String userName = authentication.getName();
 		Integer userId = authService.getUserId(userName);
 		credential.setUserId(userId);
+		
 		int result = credentialService.addOrModifiedCredential(credential);
 		httpSession.setAttribute("result", result);
 		return "redirect:/result";

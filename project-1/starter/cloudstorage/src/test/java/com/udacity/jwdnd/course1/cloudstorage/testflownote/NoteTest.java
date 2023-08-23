@@ -59,10 +59,6 @@ public class NoteTest {
         inputPassword.click();
         inputPassword.sendKeys("udacity");
 
-        // Attempt to sign up.
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("buttonSignUp")));
-        WebElement buttonSignUp = driver.findElement(By.id("buttonSignUp"));
-        buttonSignUp.click();
         /* SIGN UP: END */
     }
 

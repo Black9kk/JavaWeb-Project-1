@@ -41,7 +41,9 @@ public class CredentialService {
 		String encryptPassword = encryptionService.encryptValue(credential.getPassword(), encodeKey);
 		credential.setKey(encodeKey);
 		credential.setPassword(encryptPassword);
-
+		if(isExistCredential(credential.getUsername(), credential.getUserId())) {
+			return result;
+		}
 		try {
 			if(credential.getCredentialId() == 0) {
 				result = credentialMapper.insertCredential(credential);
@@ -78,6 +80,10 @@ public class CredentialService {
 		}
 
 		return result;
+	}
+
+	public boolean isExistCredential(String username, Integer userId) {
+		return credentialMapper.isExistCredential(username, userId) != null;
 	}
 
 }

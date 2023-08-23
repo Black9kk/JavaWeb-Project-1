@@ -53,4 +53,10 @@ public class FileService {
 	public File getFile(int fileId) {
 		return fileMapper.getFile(fileId);
 	}
+	
+	//check exist file
+	public boolean checkExist(String fileName, int userID) {
+		int exist = fileMapper.checkExistFileName(fileName, userID);
+		return exist == 1;
+	}
 }

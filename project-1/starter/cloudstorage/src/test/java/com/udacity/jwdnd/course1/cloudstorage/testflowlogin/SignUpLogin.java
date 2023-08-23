@@ -70,10 +70,6 @@ public class SignUpLogin {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("buttonSignUp")));
         WebElement buttonSignUp = driver.findElement(By.id("buttonSignUp"));
         buttonSignUp.click();
-        
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("backToLogin")));
-        WebElement backToLogin = driver.findElement(By.id("backToLogin"));
-        backToLogin.click();
         /* SIGN UP: END */
 
         /* LOGIN: START */

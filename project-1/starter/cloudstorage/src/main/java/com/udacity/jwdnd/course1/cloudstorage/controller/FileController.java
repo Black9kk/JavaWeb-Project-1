@@ -38,6 +38,12 @@ public class FileController {
 		String userName = authentication.getName();
 		int userId = authService.getUserId(userName);
 		int result = 0;
+		String filename = file.getOriginalFilename();
+
+        if (fileService.checkExist(filename, userId)){
+        	httpSession.setAttribute("result", result);
+            return "redirect:/result";
+        }
 
 		result = fileService.insertFile(file, userId);
 
